@@ -1,0 +1,42 @@
+{
+  "version": "1.0",
+  "meta": { "title": "Pão caseiro em 20s", "language": "pt-BR" },
+  "source": { "kind": "topic", "ref": "como fazer pão caseiro rápido" },
+  "intent": {
+    "goal": "viral",
+    "best_action_rationale": "Assunto curto, visual e com payoff imediato — ideal para vídeo gerado vertical com cortes rápidos."
+  },
+  "style": {
+    "preset": "viral",
+    "pacing": { "avg_cut_seconds": 1.1, "energy": 0.95 },
+    "transitions": ["cut", "zoom"],
+    "music": { "energy": 0.95 },
+    "captions": { "enabled": true, "style": "karaoke" },
+    "color": { "look": "punchy" }
+  },
+  "output": { "aspect": "9:16", "duration_target_seconds": 20.0, "platform": "tiktok" },
+  "timeline": [
+    {
+      "id": "s1",
+      "role": "hook",
+      "content": { "headline": "Pão em 20 segundos?!", "narration": "Olha só que rápido." },
+      "captions": [{ "t_in": 0.0, "t_out": 1.5, "text": "Pão em 20s?!" }],
+      "transition_out": "zoom"
+    },
+    {
+      "id": "s2",
+      "role": "point",
+      "content": { "headline": "3 ingredientes", "narration": "Farinha, água e fermento." },
+      "captions": [{ "t_in": 1.5, "t_out": 4.0, "text": "Só 3 ingredientes" }],
+      "transition_out": "cut"
+    },
+    {
+      "id": "s3",
+      "role": "cta",
+      "content": { "headline": "INEMA.CLUB", "narration": "Receita completa no inema ponto club." },
+      "captions": [{ "t_in": 18.0, "t_out": 20.0, "text": "inema.club" }],
+      "transition_out": "cut"
+    }
+  ],
+  "render": { "engine_hint": "hyperframes" }
+}
