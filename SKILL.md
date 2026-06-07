@@ -21,12 +21,19 @@ opcional (motion graphics + b-roll flux2-klein).
    `formats.md` (Reels/VSL/Autoridade), `templates.md` (PAS, Tutorial Reverso),
    `matrix.md`, `checklist.md`.
 2. `knowledge/camera/vocabulary.md` — linguagem de câmera (ponte: vira prompt E motion).
-3. `knowledge/prompting/` — expandir cada beat em prompt cinematográfico (b-roll
-   flux2-klein hoje; Sora/Veo depois).
-4. `knowledge/motion/` — `eases.md`, `recipes.md` (GSAP/CSS time-driven), `textures.md`
+3. `knowledge/storyboard.md` — direção de cena (conflito visual, câmera por função,
+   continuidade sagrada, freeze final) — absorvido do MDD; aplica a beats generativos.
+4. `knowledge/prompting/` — expandir cada beat em prompt cinematográfico; `clip-direction.md`
+   traz prompt-final + negativo (b-roll flux2-klein hoje; Sora/Veo/Kling depois).
+5. `knowledge/motion/` — `eases.md`, `recipes.md` (GSAP/CSS time-driven), `textures.md`
    (grão/halação feTurbulence).
-5. `knowledge/archetypes/` — cenas prontas (ex.: `cinematic-hero.md`).
-6. `knowledge/tokens.md` + `pacing.md` — identidade e ritmo.
+6. `knowledge/archetypes/` — cenas prontas (ex.: `cinematic-hero.md`).
+7. `knowledge/tokens.md` + `pacing.md` — identidade e ritmo.
+
+Para beats `generated_clip`/`generated_still`, **delegue a direção à skill
+`mestre-direcao-dinamica` (MDD)** — ela devolve storyboard painel-a-painel + prompt final +
+prompt negativo de qualidade de diretor. `video-plan-editor` decide estratégia+estrutura e
+escolhe quais beats são `motion` (GSAP) vs generativos; o MDD dirige os generativos.
 
 ## Fluxo (sempre nesta ordem)
 

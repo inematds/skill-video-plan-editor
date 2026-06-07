@@ -178,6 +178,29 @@ JSON serializável (pydantic 2). Campos principais:
 
 Identidade default PT-BR; CTA INEMA.CLUB como última cena em vídeos gerados (desligável).
 
+## Base de conhecimento (`knowledge/`)
+
+O que dá "talento" à skill — vocabulário e padrões que ela usa para **criar** (não copiar).
+A composição de cada vídeo é autoral; estes arquivos são os blocos de construção.
+
+| Pilar | Conteúdo |
+|---|---|
+| `strategy/` | NARRATIVA — Viral5, Save the Cat, Hero, Hook-Value-CTA, hooks 3s, cases, formatos (Reels/VSL/Autoridade), templates, matriz, checklist |
+| `camera/vocabulary.md` | linguagem de câmera (ponte: vira prompt **e** parâmetro de motion) |
+| `storyboard.md` | **direção de cena** — conflito visual, câmera por função, continuidade sagrada, freeze final (**absorvido do MDD**) |
+| `prompting/` | expandir cada beat em prompt cinematográfico; `clip-direction.md` = prompt-final + negativo |
+| `motion/` | eases cinematográficos, recipes GSAP/CSS time-driven, texturas feTurbulence (grão/halação sem assets) |
+| `archetypes/` | cenas prontas (HTML+CSS+GSAP), ex.: `cinematic-hero` |
+| `tokens.md` · `pacing.md` | identidade (paleta/fontes) e ritmo (word-by-word, pattern interrupt) |
+
+**Integração com o MDD** ([`mestre-direcao-dinamica`](#)): para beats
+`render_kind: generated_clip`/`generated_still`, a skill **delega a direção cinematográfica
+ao MDD** — que devolve storyboard painel-a-painel + prompt final + prompt negativo de
+qualidade de diretor. `video-plan-editor` é o **orquestrador** (estratégia → plano →
+execução); o MDD é o **motor de direção** dos beats generativos. Os princípios do MDD
+(conflito visual, continuidade, freeze, CTA fora do prompt) estão destilados em
+`knowledge/storyboard.md` e `knowledge/prompting/clip-direction.md`.
+
 ## Arquitetura
 
 ```
