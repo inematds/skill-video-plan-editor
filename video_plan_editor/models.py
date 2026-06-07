@@ -68,6 +68,18 @@ class EngineHint(str, Enum):
     hyperframes = "hyperframes"
 
 
+class Emotion(str, Enum):
+    facts = "facts"
+    feelings = "feelings"
+    fun = "fun"
+
+
+class RenderKind(str, Enum):
+    motion = "motion"
+    generated_still = "generated_still"
+    generated_clip = "generated_clip"
+
+
 class Media(BaseModel):
     path: str | None = None
     duration: float | None = None
@@ -84,6 +96,11 @@ class Source(BaseModel):
 class Intent(BaseModel):
     goal: Goal
     best_action_rationale: str
+    angle: str | None = None
+    pain: str | None = None
+    emotion: Emotion | None = None
+    framework: str | None = None
+    hook_variants: list[str] = Field(default_factory=list)
 
 
 class Pacing(BaseModel):
@@ -141,6 +158,12 @@ class TimelineItem(BaseModel):
     captions: list[Caption] = Field(default_factory=list)
     overlays: list[dict] = Field(default_factory=list)
     transition_out: Transition = Transition.cut
+    # camada de execução (knowledge base): camera/vocabulary, archetypes, motion/recipes
+    camera: str | None = None
+    archetype: str | None = None
+    motion: list[str] = Field(default_factory=list)
+    render_kind: RenderKind = RenderKind.motion
+    gen_prompt: str | None = None
 
 
 class Render(BaseModel):
