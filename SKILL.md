@@ -29,6 +29,8 @@ opcional (motion graphics + b-roll flux2-klein).
    (grão/halação feTurbulence).
 6. `knowledge/archetypes/` — cenas prontas (ex.: `cinematic-hero.md`).
 7. `knowledge/tokens.md` + `pacing.md` — identidade e ritmo.
+8. `knowledge/render.md` — **execução real**: como o plano vira MP4 (HyperFrames + b-roll
+   flux2-klein via inemaimg), com a receita e os gotchas.
 
 Para beats `generated_clip`/`generated_still`, **delegue a direção à skill
 `mestre-direcao-dinamica` (MDD)** — ela devolve storyboard painel-a-painel + prompt final +
@@ -60,8 +62,10 @@ escolhe quais beats são `motion` (GSAP) vs generativos; o MDD dirige os generat
 
 5. **Resumo** — `vpe resumo plano-edicao.json > RESUMO.md`; mostre ao usuário e aprove.
 
-6. **Render (opcional, híbrido)** — quando pedido:
-   - b-roll `generated_still` → gerar com **flux2-klein** a partir do `gen_prompt`;
+6. **Render (opcional, híbrido)** — quando pedido, siga `knowledge/render.md` (receita +
+   gotchas). Em resumo:
+   - b-roll `generated_still` → gerar com **flux2-klein** (playground `inemaimg`
+     `http://localhost:8000` via `agent-browser`) a partir do `gen_prompt`;
    - montar a composição HTML/CSS/GSAP usando `archetypes/` + `motion/recipes.md` +
      `textures.md` (grão/grade) + `tokens.md`; renderizar via HyperFrames (skill
      `video-explicativo` cobre o pipeline). Reaproveite narração quando existir.

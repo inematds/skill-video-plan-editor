@@ -6,7 +6,8 @@ renderer-agnóstico — e, opcionalmente, renderiza o vídeo.
 
 > Você passa um assunto/link → a skill **detecta o tipo de input**, **analisa a melhor
 > ação de edição**, escolhe um **preset de estilo** e emite `plano-edicao.json` +
-> `RESUMO.md`. O render é um passo opcional depois (Fase 2/3).
+> `RESUMO.md`. O render é opcional e **já funciona**: motion graphics (HyperFrames) +
+> b-roll gerado no **flux2-klein** — local, determinístico, sem chave de API.
 
 ---
 
@@ -63,7 +64,9 @@ input (assunto | link de página | link de vídeo)
   `intent.best_action_rationale`.
 - **Preset de estilo**: `acao | suave | promo | vendas | viral` (perfis de parâmetro).
 - **Plano**: JSON abstrato (`EditPlan`, pydantic) + `RESUMO.md` legível.
-- **Render (opcional)**: adaptadores FFmpeg / Auto-Editor / HyperFrames (Fase 2/3).
+- **Render (opcional, já funcional)**: motion graphics via HyperFrames + b-roll flux2-klein
+  (ver seção **Render** abaixo). Ingest de footage real (Auto-Editor) e clipes generativos
+  (Sora/Veo) ficam pro roadmap.
 
 ## CLI — exemplos reais
 
@@ -174,7 +177,7 @@ JSON serializável (pydantic 2). Campos principais:
 2. Preenche a `timeline` (roteiro/cenas para assunto/página; `source_in/out` para vídeo).
 3. `vpe validate` → zera os `[error]`.
 4. `vpe resumo` → mostra ao usuário para aprovar.
-5. Render (Fase 2/3) quando solicitado.
+5. Render (opcional) quando solicitado — motion graphics + b-roll flux2-klein (ver **Render**).
 
 Identidade default PT-BR; CTA INEMA.CLUB como última cena em vídeos gerados (desligável).
 
@@ -200,6 +203,27 @@ qualidade de diretor. `video-plan-editor` é o **orquestrador** (estratégia →
 execução); o MDD é o **motor de direção** dos beats generativos. Os princípios do MDD
 (conflito visual, continuidade, freeze, CTA fora do prompt) estão destilados em
 `knowledge/storyboard.md` e `knowledge/prompting/clip-direction.md`.
+
+## Render (execução real)
+
+Local, determinístico, **sem chave de API** (HyperFrames = Chrome headless + FFmpeg). Receita
+completa em [`knowledge/render.md`](knowledge/render.md). Resumo:
+
+1. Plano aprovado (`vpe validate` ok) + narração (Kokoro local ou WAVs reaproveitados;
+   durações medidas com `ffprobe` → timing é fonte única).
+2. **B-roll** (beats `generated_still`): gerar imagens no **flux2-klein** (playground
+   `inemaimg`, dirigido por `agent-browser`) → `assets/broll/`.
+3. **Composição** `build-index.mjs` (data-driven): cada beat = archetype + recipes de motion
+   + grão/grade; b-roll de fundo com push-in + gradiente escuro (só hook/CTA/sections, nunca
+   atrás de diagrama denso).
+4. `hyperframes lint` (0) + `inspect` (0) → render **draft** (QC com frames) → **high**
+   (`renders/<nome>-16x9.mp4` / `-9x16.mp4`).
+
+Clipes generativos (Sora/Veo/Kling) são fase 2 opcional, dirigidos pelo MDD.
+
+**Caso de referência:** `~/projetos/hormozi13-viral-9x16/` — "12 lições do Hormozi" em 9:16
+premium (12 diagramas animados, grão/grade, Anton) e 16:9 com **b-roll flux2-klein** (hook
+= silhueta, CTA = bokeh, push-in + grade). Prova de fogo do pipeline híbrido.
 
 ## Arquitetura
 
@@ -228,14 +252,13 @@ vpe scaffold "teste" --preset acao
 
 ## Roadmap
 
-- **Fase 1 (atual):** núcleo gerador de plano — schema, presets, detect, validação,
-  resumo, CLI. ✅
-- **Fase 2:** ingest de vídeo real — yt-dlp + ffprobe + transcrição + detecção de
-  silêncio/cena (Auto-Editor) + auto-highlights (padrão LAVE).
-- **Fase 3:** adaptadores de render — FFmpeg, HyperFrames.
-- **v2 (B):** render nativo **Remotion** (plano → Tracks/Items).
-- **v3 (C):** export **pipeline mcp-video** + **OTIO `.otio`** para NLEs
-  (Premiere/Resolve/Final Cut).
+- **Núcleo gerador de plano** — schema, presets, detect, validação, resumo, CLI. ✅
+- **Base de conhecimento** — strategy/camera/storyboard/prompting/motion/archetypes (+ MDD). ✅
+- **Render motion graphics + b-roll flux2-klein** (HyperFrames) — funcional (ver Render). ✅
+- **Ingest de footage real** — yt-dlp + ffprobe + transcrição + corte por silêncio/cena
+  (Auto-Editor) + auto-highlights (padrão LAVE). ⏳ próximo.
+- **Clipes generativos** — Sora/Veo/Kling dirigidos pelo MDD (precisa de acesso). ⏳
+- **Render nativo Remotion** (plano → Tracks/Items) e export **OTIO `.otio`** p/ NLEs. ⏳
 
 ## Documentos
 
