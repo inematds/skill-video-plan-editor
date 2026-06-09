@@ -258,7 +258,10 @@ vpe scaffold "teste" --preset acao
 - **Ingest de footage real** — yt-dlp + ffprobe + transcrição + corte por silêncio/cena
   (Auto-Editor) + auto-highlights (padrão LAVE). ⏳ próximo.
 - **Clipes generativos** — Sora/Veo/Kling dirigidos pelo MDD (precisa de acesso). ⏳
-- **Render nativo Remotion** (plano → Tracks/Items) e export **OTIO `.otio`** p/ NLEs. ⏳
+- **Render nativo Remotion** (plano → Tracks/Items) usando os
+  [**remotion-templates**](https://github.com/inematds/remotion-templates) (81 componentes) como biblioteca
+  de archetypes por beat/`role` (`hook`→Intro/Title, `point`→Text/Charts, `broll`→Image/Cinematic, `cta`→End
+  Card) + export **OTIO `.otio`** p/ NLEs. ⏳
 
 ## Documentos
 
