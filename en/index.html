@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 
 <!-- Landing + guia do video-plan-editor. Padrao projetos-landing-guia (INEMA). Self-contained. -->
-<html lang="pt-BR">
+<html lang="en">
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
-<title>video-plan-editor — plano profissional de edição de vídeo</title>
-<meta content="Skill Claude Code + pacote Python (vpe) que transforma um assunto ou link num plano de edição de vídeo estruturado e renderer-agnóstico (plano-edicao.json + RESUMO.md), com render opcional via HyperFrames + b-roll flux2-klein." name="description"/>
+<title>video-plan-editor — professional video editing plan</title>
+<meta content="Claude Code skill + Python package (vpe) that turns a topic or link into a structured, renderer-agnostic video editing plan (plano-edicao.json + RESUMO.md), with optional rendering via HyperFrames + flux2-klein b-roll." name="description"/>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;800&amp;family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;600&amp;display=swap" rel="stylesheet"/>
@@ -90,18 +90,18 @@
   .pill{display:inline-block;border:1px solid var(--line);border-radius:999px;padding:.3em .8em;font-size:.78rem;color:var(--mut);margin:0 4px}
 </style>
 <link href="https://inematds.github.io/skill-video-plan-editor/" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/skill-video-plan-editor/en/" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/skill-video-plan-editor/es/" hreflang="es" rel="alternate"/></head>
-<body><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="./" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">PT</a><a href="en/" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="es/" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
+<body><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="./" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">EN</a><a href="../es/" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
 <nav><div class="wrap">
 <a class="brand" href="#top"><span class="emoji">🎞️</span> video-plan-editor</a>
 <span class="sep">|</span>
 <a class="inema" href="https://inema.club" rel="noopener" target="_blank">INEMA.CLUB</a>
 <div class="links">
-<a class="sec" href="#oque">O que é</a>
-<a class="sec" href="#fluxo">Como funciona</a>
-<a class="sec" href="#guia">Guia de uso</a>
-<a class="sec" href="#exemplos">Exemplos</a>
+<a class="sec" href="#oque">What it is</a>
+<a class="sec" href="#fluxo">How it works</a>
+<a class="sec" href="#guia">User guide</a>
+<a class="sec" href="#exemplos">Examples</a>
 <a class="sec" href="#roadmap">Roadmap</a>
-<button aria-label="Alternar tema" class="tgl" id="themeToggle" title="Alternar tema">🌙</button>
+<button aria-label="Switch theme" class="tgl" id="themeToggle" title="Switch theme">🌙</button>
 <a class="btn" href="https://github.com/inematds/skill-video-plan-editor" rel="noopener" target="_blank">GitHub</a>
 </div>
 </div></nav>
@@ -109,98 +109,98 @@
 <div class="glow"></div>
 <div class="wrap">
 <div>
-<span class="chip">Skill Claude Code + pacote Python (vpe)</span>
-<h1>Assunto ou link vira um <span class="amb">plano profissional de edição</span></h1>
-<p class="lead">Você passa um assunto ou um link (página/vídeo). A skill detecta o tipo, decide a melhor ação de edição, escolhe um preset e emite <code>plano-edicao.json</code> + <code>RESUMO.md</code> — dado estruturado, renderer-agnóstico. Render opcional já funciona: motion graphics + b-roll flux2-klein, local, sem chave de API.</p>
+<span class="chip">Claude Code skill + Python package (vpe)</span>
+<h1>A topic or link becomes a <span class="amb">professional video editing plan</span></h1>
+<p class="lead">You provide a topic or a link (page/video). The skill detects the type, decides on the best editing action, chooses a preset, and outputs <code>plano-edicao.json</code> + <code>RESUMO.md</code> — structured data, renderer-agnostic. Optional rendering already works: motion graphics + flux2-klein b-roll, local, no API key.</p>
 <div class="cta">
-<a class="btn" href="#guia">Começar o guia</a>
-<a class="btn ghost" href="https://github.com/inematds/skill-video-plan-editor" rel="noopener" target="_blank">Ver no GitHub</a>
+<a class="btn" href="#guia">Start the guide</a>
+<a class="btn ghost" href="https://github.com/inematds/skill-video-plan-editor" rel="noopener" target="_blank">View on GitHub</a>
 </div>
 </div>
-<figure><pre><span class="c"># do input ao plano</span>
+<figure><pre><span class="c"># from input to plan</span>
 input <span class="k">→</span> detect <span class="k">→</span> analyze <span class="k">→</span> best action
       <span class="k">→</span> preset <span class="k">→</span> PLANO (json + resumo)
       <span class="k">→</span> (opcional) render <span class="k">→</span> MP4
 
-<span class="c"># início rápido</span>
+<span class="c"># quick start</span>
 <span class="k">vpe scaffold</span> <span class="s">"como fazer pão caseiro"</span> --preset viral \
     &gt; plano-edicao.json
 <span class="k">vpe validate</span> plano-edicao.json   <span class="c"># guardrails</span>
-<span class="k">vpe resumo</span>   plano-edicao.json   <span class="c"># pra aprovar</span></pre></figure>
+<span class="k">vpe resumo</span>   plano-edicao.json   <span class="c"># to approve</span></pre></figure>
 </div>
 </header>
 <section id="oque"><div class="wrap">
-<span class="chip">O que é</span>
-<h2>A camada que decide o que editar</h2>
-<p class="sub">A edição programática é fragmentada (FFmpeg, Auto-Editor, MoviePy, Remotion, HyperFrames). Falta a camada que, de linguagem natural, decide o que fazer e emite um plano limpo e portável. É isso aqui.</p>
+<span class="chip">What it is</span>
+<h2>The layer that decides what to edit</h2>
+<p class="sub">Programmatic editing is fragmented (FFmpeg, Auto-Editor, MoviePy, Remotion, HyperFrames). What’s missing is a layer that decides what to do from natural language and outputs a clean, portable plan. That’s what this is.</p>
 <div class="grid g3">
-<div class="card"><h3>🧠 Decide a ação</h3><p>Classifica o input em <code>topic</code>, <code>page</code> ou <code>video</code>, analisa a melhor ação de edição e registra o porquê em <code>best_action_rationale</code>.</p></div>
-<div class="card"><h3>📄 Plano renderer-agnóstico</h3><p><code>EditPlan</code> em JSON (pydantic) + <code>RESUMO.md</code> legível. Pode ser consumido por FFmpeg, HyperFrames, Remotion ou outros sistemas.</p></div>
-<div class="card"><h3>🎬 Render que já funciona</h3><p>Motion graphics via HyperFrames + b-roll gerado no flux2-klein. Local, determinístico, sem chave de API.</p></div>
+<div class="card"><h3>🧠 Choose the action</h3><p>Classifies the input as <code>topic</code>, <code>page</code> or <code>video</code>, analyzes the best editing action and records why in <code>best_action_rationale</code>.</p></div>
+<div class="card"><h3>📄 Renderer-agnostic plan</h3><p><code>EditPlan</code> in JSON (pydantic) + <code>RESUMO.md</code> readable. It can be consumed by FFmpeg, HyperFrames, Remotion, or other systems.</p></div>
+<div class="card"><h3>🎬 Rendering that already works</h3><p>Motion graphics via HyperFrames + b-roll generated with flux2-klein. Local, deterministic, no API key.</p></div>
 </div>
 </div></section>
 <section id="fluxo"><div class="wrap">
-<span class="chip">Como funciona</span>
-<h2>Do input ao MP4</h2>
-<p class="sub">5 presets de estilo (<strong>acao · suave · promo · vendas · viral</strong>) são perfis de parâmetro sobre o <em>mesmo</em> schema — trocar o preset muda ritmo, transições, trilha, legenda e aspect sem reescrever o plano base.</p>
+<span class="chip">How it works</span>
+<h2>From input to MP4</h2>
+<p class="sub">5 style presets (<strong>action · smooth · promo · sales · viral</strong>) are parameter profiles for <em>same</em> schema — changing the preset changes pacing, transitions, soundtrack, captions, and aspect ratio without rewriting the base plan.</p>
 <div class="flow">
 <span>input</span><span class="arr">→</span>
 <span>detect</span><span class="arr">→</span>
 <span>ingest + analyze</span><span class="arr">→</span>
 <span>best action</span><span class="arr">→</span>
-<span>preset de estilo</span><span class="arr">→</span>
-<span>PLANO (json + resumo)</span><span class="arr">→</span>
-<span>render (opcional)</span>
+<span>style preset</span><span class="arr">→</span>
+<span>PLAN (json + summary)</span><span class="arr">→</span>
+<span>render (optional)</span>
 </div>
 </div></section>
 <section id="pre"><div class="wrap">
-<span class="chip">Pré-requisitos</span>
-<h2>O que precisa pra rodar</h2>
-<p class="sub">O núcleo (gerar plano) é só Python. O render é opcional e precisa da stack local de motion graphics.</p>
+<span class="chip">Prerequisites</span>
+<h2>What you need to run it</h2>
+<p class="sub">The core (plan generation) is just Python. Rendering is optional and requires the local motion graphics stack.</p>
 <div class="grid g3">
-<div class="card"><h3>🐍 Python ≥ 3.11</h3><p>Instale em editável; expõe o console script <code>vpe</code>.</p><pre><span class="k">python3 -m venv .venv</span> &amp;&amp; <span class="k">. .venv/bin/activate</span>
+<div class="card"><h3>🐍 Python ≥ 3.11</h3><p>Install in editable mode; exposes the console script <code>vpe</code>.</p><pre><span class="k">python3 -m venv .venv</span> &amp;&amp; <span class="k">. .venv/bin/activate</span>
 <span class="k">pip install -e</span> <span class="s">".[dev]"</span></pre></div>
-<div class="card"><h3>🤖 Claude Code</h3><p>A skill orquestra o <code>vpe</code> e preenche a timeline criativa por linguagem natural.</p><pre><span class="c"># https://claude.com/claude-code</span></pre></div>
-<div class="card"><h3>🎬 Stack de render (opcional)</h3><p>Só pra renderizar: HyperFrames (Chrome+FFmpeg), Kokoro (narração) e flux2-klein (b-roll).</p><pre><span class="c"># ver knowledge/render.md</span></pre></div>
+<div class="card"><h3>🤖 Claude Code</h3><p>The skill orchestrates <code>vpe</code> and fills the creative timeline using natural language.</p><pre><span class="c"># https://claude.com/claude-code</span></pre></div>
+<div class="card"><h3>🎬 Rendering stack (optional)</h3><p>For rendering only: HyperFrames (Chrome+FFmpeg), Kokoro (voiceover), and flux2-klein (b-roll).</p><pre><span class="c"># see knowledge/render.md</span></pre></div>
 </div>
 </div></section>
 <section id="guia"><div class="wrap">
-<span class="chip">Guia de uso · passo a passo</span>
-<h2>Do assunto ao plano aprovado</h2>
-<p class="sub">Comandos reais do <code>vpe</code>. A skill (via <code>SKILL.md</code>) preenche a timeline entre o scaffold e a validação.</p>
+<span class="chip">User guide · step by step</span>
+<h2>From topic to approved plan</h2>
+<p class="sub">Real commands for <code>vpe</code>. The skill (via <code>SKILL.md</code>) fills the timeline between the scaffold and validation.</p>
 <div class="step"><div class="b">1</div><div>
-<h3>Instale o pacote</h3>
-<p>Cria o ambiente e expõe o comando <code>vpe</code>.</p>
-<pre><span class="k">pip install -e</span> <span class="s">".[dev]"</span>  <span class="c"># expõe `vpe`</span></pre>
+<h3>Install the package</h3>
+<p>Creates the environment and exposes the command <code>vpe</code>.</p>
+<pre><span class="k">pip install -e</span> <span class="s">".[dev]"</span>  <span class="c"># exposes `vpe`</span></pre>
 </div></div>
 <div class="step"><div class="b">2</div><div>
-<h3>Gere o esqueleto do plano</h3>
-<p><code>vpe</code> detecta o input (assunto/página/vídeo) e aplica o preset escolhido.</p>
+<h3>Generate the plan outline</h3>
+<p><code>vpe</code> detects the input (topic/page/video) and applies the selected preset.</p>
 <pre><span class="k">vpe scaffold</span> <span class="s">"como fazer pão caseiro"</span> --preset viral &gt; plano-edicao.json</pre>
 </div></div>
 <div class="step"><div class="b">3</div><div>
-<h3>A skill preenche a timeline</h3>
-<p>Roteiro/cenas para assunto ou página; <code>source_in/out</code> (cortes reais) para vídeo. Veja <code>examples/</code>.</p>
-<pre><span class="c"># timeline: hook → point → ... → cta (cada beat com headline/narração/legenda)</span></pre>
+<h3>The skill fills in the timeline</h3>
+<p>Script/scenes for a topic or page; <code>source_in/out</code> (real cuts) for video. See <code>examples/</code>.</p>
+<pre><span class="c"># timeline: hook → point → ... → cta (each beat with headline/narration/caption)</span></pre>
 </div></div>
 <div class="step"><div class="b">4</div><div>
-<h3>Valide os guardrails</h3>
-<p>Zera os <code>[error]</code> antes de qualquer render (timeline vazia, sem hook, etc.).</p>
+<h3>Validate the guardrails</h3>
+<p>Reset the <code>[error]</code> before any rendering (empty timeline, no hook, etc.).</p>
 <pre><span class="k">vpe validate</span> plano-edicao.json  <span class="c"># exit 0 = ok</span></pre>
 </div></div>
 <div class="step"><div class="b">5</div><div>
-<h3>Gere o resumo pra aprovação</h3>
-<p>Documento legível com fonte, objetivo, preset e a timeline beat a beat. Render é opcional, sob pedido.</p>
+<h3>Generate the approval summary</h3>
+<p>Readable document with source, objective, preset, and a beat-by-beat timeline. Rendering is optional, on request.</p>
 <pre><span class="k">vpe resumo</span> plano-edicao.json &gt; RESUMO.md</pre>
 </div></div>
 </div></section>
 <section id="exemplos"><div class="wrap">
-<span class="chip">Exemplos</span>
-<h2>Saída real do vpe</h2>
-<p class="sub">Plano completo de exemplo em <code>examples/exemplo-viral-pao.json</code>.</p>
+<span class="chip">Examples</span>
+<h2>Actual vpe output</h2>
+<p class="sub">Complete sample plan in <code>examples/exemplo-viral-pao.json</code>.</p>
 <div class="grid g2">
 <div class="card">
-<h3>📦 scaffold — preset viral aplicado</h3>
+<h3>📦 scaffold — viral preset applied</h3>
 <pre><span class="c">// vpe scaffold "https://youtu.be/..." --preset viral</span>
 "source": { "kind": <span class="s">"video"</span>, ... },
 "style": {
@@ -209,11 +209,11 @@ input <span class="k">→</span> detect <span class="k">→</span> analyze <span
   "captions": { "style": <span class="s">"karaoke"</span> }
 },
 "output": { "aspect": <span class="s">"9:16"</span>, "duration_target_seconds": 30 }</pre>
-<p style="margin-top:10px">Input do YouTube classificado como <code>video</code>; preset aplicou corte ~1.1s, legenda karaoke e 9:16. A timeline nasce vazia.</p>
+<p style="margin-top:10px">YouTube input classified as <code>video</code>; preset applied ~1.1s cuts, karaoke captions, and 9:16. The timeline starts empty.</p>
 </div>
 <div class="card">
-<h3>📝 resumo — pronto pra aprovar</h3>
-<pre><span class="c"># Pão caseiro em 20s</span>
+<h3>📝 summary — ready for approval</h3>
+<pre><span class="c"># Homemade bread in 20s</span>
 - Objetivo: viral
 - Preset: viral (corte ~1.1s, energia 0.95)
 - Saída: 9:16, alvo 20s
@@ -221,19 +221,19 @@ input <span class="k">→</span> detect <span class="k">→</span> analyze <span
 <span class="k">1. hook</span>  Headline: Pão em 20 segundos?!
 <span class="k">2. point</span> Headline: 3 ingredientes
 <span class="k">3. cta</span>   Headline: INEMA.CLUB</pre>
-<p style="margin-top:10px">O mesmo plano vira um markdown legível com a timeline beat a beat.</p>
+<p style="margin-top:10px">The same plan becomes readable Markdown with a beat-by-beat timeline.</p>
 </div>
 </div>
 </div></section>
 <section id="roadmap"><div class="wrap">
 <span class="chip">Roadmap</span>
-<h2>O que já funciona e o que vem</h2>
-<p class="sub">Schema do plano: <code>meta · source · intent · style · output · timeline[] · render</code>. Integra com o <a href="https://inematds.github.io/mdd/">MDD</a> para a direção cinematográfica dos beats generativos.</p>
-<div class="phase"><div class="tag">✅ Pronto</div><div class="d"><strong>Núcleo gerador de plano</strong><span>Schema (pydantic), presets, detect, validação, resumo, CLI <code>vpe</code>. 35 testes.</span></div></div>
-<div class="phase"><div class="tag">✅ Pronto</div><div class="d"><strong>Base de conhecimento</strong><span>strategy / camera / storyboard / prompting / motion / archetypes — com os princípios do MDD destilados.</span></div></div>
-<div class="phase"><div class="tag">✅ Pronto</div><div class="d"><strong>Render motion graphics + b-roll</strong><span>HyperFrames (Chrome+FFmpeg) + b-roll flux2-klein, local e determinístico. Caso de referência: hormozi13 em 9:16 e 16:9.</span></div></div>
-<div class="phase"><div class="tag">⏳ Próximo</div><div class="d"><strong>Ingest de footage real</strong><span>yt-dlp + ffprobe + transcrição + corte por silêncio/cena (Auto-Editor) + auto-highlights.</span></div></div>
-<div class="phase"><div class="tag">⏳ Futuro</div><div class="d"><strong>Clipes generativos + Remotion / OTIO</strong><span>Sora/Veo/Kling dirigidos pelo MDD; render nativo Remotion e export <code>.otio</code> pra NLEs.</span></div></div>
+<h2>What works now and what’s coming</h2>
+<p class="sub">Plan schema: <code>meta · source · intent · style · output · timeline[] · render</code>. Integrates with <a href="https://inematds.github.io/mdd/">MDD</a> for the cinematic direction of generative beats.</p>
+<div class="phase"><div class="tag">✅ Ready</div><div class="d"><strong>Plan generation core</strong><span>Schema (pydantic), presets, detect, validation, summary, CLI <code>vpe</code>. 35 tests.</span></div></div>
+<div class="phase"><div class="tag">✅ Ready</div><div class="d"><strong>Knowledge base</strong><span>strategy / camera / storyboard / prompting / motion / archetypes — with MDD principles distilled.</span></div></div>
+<div class="phase"><div class="tag">✅ Ready</div><div class="d"><strong>Motion graphics + b-roll rendering</strong><span>HyperFrames (Chrome+FFmpeg) + flux2-klein b-roll, local and deterministic. Reference case: hormozi13 in 9:16 and 16:9.</span></div></div>
+<div class="phase"><div class="tag">⏳ Next</div><div class="d"><strong>Real footage ingestion</strong><span>yt-dlp + ffprobe + transcription + silence/scene-based cuts (Auto-Editor) + auto-highlights.</span></div></div>
+<div class="phase"><div class="tag">⏳ Future</div><div class="d"><strong>Generative clips + Remotion / OTIO</strong><span>Sora/Veo/Kling directed by MDD; native Remotion rendering and export <code>.otio</code> for NLEs.</span></div></div>
 </div></section>
 <footer>
 <div class="wrap">
